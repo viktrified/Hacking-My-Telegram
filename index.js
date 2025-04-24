@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { TelegramClient } = require("telegram");
 const { StringSession } = require("telegram/sessions");
-const input = require("input"); // For handling user input
+const input = require("input"); // For handling input
 
 const apiId = parseInt(process.env.API_ID);
 const apiHash = process.env.API_HASH;
@@ -25,7 +25,6 @@ const stringSession = new StringSession(process.env.STRING_SESSION);
   console.log("You should now be connected.");
   console.log("Your session string:", client.session.save()); // Save this string to avoid logging in again
 
-  // Get your user information (including join date)
   const me = await client.getMe();
   console.log("Your account info:", me);
   console.log(
